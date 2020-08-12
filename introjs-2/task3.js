@@ -1,22 +1,26 @@
 function cekNumber(nilaiAwal, nilaiAkhir, dataArray) {
     let result = null;
-    if(nilaiAwal > nilaiAkhir){
-        result = 'Nilai akhir harus lebih besar dari nilai awal';
+    if(typeof nilaiAwal !== 'number' || typeof nilaiAkhir !== 'number' || !Array.isArray(dataArray)) {
+        result = 'tipe data salah';
     }else {
-        if(dataArray.length < 5){
-            result = 'Data array harus lebih dari 5';
+        if(nilaiAwal > nilaiAkhir){
+            result = 'Nilai akhir harus lebih besar dari nilai awal';
         }else {
-            let filterArr = dataArray.filter(e => {
-               return e > nilaiAwal && e < nilaiAkhir; 
-            })
-            if(filterArr.length == 0) {
-                result = 'Jumlah angka dalam array tida ada';
+            if(dataArray.length < 5){
+                result = 'Data array harus lebih dari 5';
             }else {
-                result = filterArr.sort((a, b) => a - b);
+                let filterArr = dataArray.filter(e => {
+                   return e > nilaiAwal && e < nilaiAkhir; 
+                })
+                if(filterArr.length == 0) {
+                    result = 'Jumlah angka dalam array tida ada';
+                }else {
+                    result = filterArr.sort((a, b) => a - b);
+                }
             }
         }
     }
     return result;
 }
 
-console.log(cekNumber(2, 20, [7, 17, 18, 9, 10, 21])); 
+console.log(cekNumber(2, 20, [7, 17, 18, 9, 1, 21])); 

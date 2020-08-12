@@ -15,4 +15,4 @@ const result = (result) => {
     console.log(result);
 }
 
-findItem('carol', 2, result);
+findItem('an', 5, result);
