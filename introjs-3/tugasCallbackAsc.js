@@ -10,15 +10,13 @@ const getMonth = (callback) => {
     }, 4000);
 }
 
-resultData = (errMsg, month) => {
+getMonth((errMsg, month) => {
     if(!errMsg) {
         month.map(e => console.log(e))
     }else {
     console.log(`${errMsg}`);
     }
-}
-
-getMonth(resultData);
+});
 
 // nilai true => parameter kedua
 // false => parameter satu

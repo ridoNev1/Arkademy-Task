@@ -7,10 +7,12 @@
 //4. apabila semua data dalam array dinyatakan lulus( output : semua peserta lulus)
 //5. apabila semua data dalam array dinyatakan tidak lulus (output : tidak ada peserta yang lulus)
 //6. apabila hanya n peserta yang lulus maka ( output contoh : n orang peserta lulus  )
+// cth input :[90, 74, 85, 100]
+
 const nilai = (scores) => {
     let hasil = null;
     if(!Array.isArray(scores)) {
-        hasil = 303;
+        hasil = false;
     }else {
         let scoreRes = scores.filter(e => e >= 75 && e <= 100);
         if(scoreRes.length === 0) {
@@ -30,7 +32,7 @@ const cekNilai = (callback) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const result = callback(null); // apabila data yang masuk bukan array akan dianggap false. cth input :[90, 74, 85, 100]
-            if(result !== 303) {
+            if(result) {
                 resolve(result);
             }else {
                 reject(new Error(' Data Request Error'))

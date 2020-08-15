@@ -26,7 +26,7 @@ resultDay();
 
 
 // hariKerja('senin').then((response) => {
-//     console.log(response);
+//     console.log(response);//digunakan untuk menangani promise untuk kasus berhasil
 // }).catch((err) => {
-//     console.log(`${err}`);
+//     console.log(`${err}`);//metode penanganan promise yang hanya menangani kasus eror/ditolak
 // })
