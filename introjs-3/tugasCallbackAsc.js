@@ -1,6 +1,6 @@
 const getMonth = (callback) => {
     setTimeout(() => {
-        let err = false;
+        let err = true;
         let month = ['January', 'February', 'Maret', 'April', 'Mei', 'Juni', 'juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
         if(!err) {
             callback(null, month);
@@ -11,7 +11,7 @@ const getMonth = (callback) => {
 }
 
 getMonth((errMsg, month) => {
-    if(!errMsg) {
+    if(errMsg === null) {
         month.map(e => console.log(e))
     }else {
     console.log(`${errMsg}`);

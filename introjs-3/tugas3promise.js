@@ -9,43 +9,43 @@
 //6. apabila hanya n peserta yang lulus maka ( output contoh : n orang peserta lulus  )
 // cth input :[90, 74, 85, 100]
 
-const nilai = (scores) => {
-    let hasil = null;
-    if(!Array.isArray(scores)) {
-        hasil = false;
-    }else {
-        let scoreRes = scores.filter(e => e >= 75 && e <= 100);
-        if(scoreRes.length === 0) {
-            hasil = 'tidak ada peserta yang lulus';
-        }else if(scoreRes.length === scores.length) {
-            hasil = 'semua peserta lulus';
-        }else {
-            hasil = `${scoreRes.length} orang peserta lulus`;
-        }
-    }
-    return hasil;
-}
+// const nilai = (scores) => {
+//     let hasil = null;
+//     if(!Array.isArray(scores)) {
+//         hasil = false;
+//     }else {
+//         let scoreRes = scores.filter(e => e >= 75 && e <= 100);
+//         if(scoreRes.length === 0) {
+//             hasil = 'tidak ada peserta yang lulus';
+//         }else if(scoreRes.length === scores.length) {
+//             hasil = 'semua peserta lulus';
+//         }else {
+//             hasil = `${scoreRes.length} orang peserta lulus`;
+//         }
+//     }
+//     return hasil;
+// }
 
-//promise
+// //promise
 
-const cekNilai = (callback) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const result = callback(null); // apabila data yang masuk bukan array akan dianggap false. cth input :[90, 74, 85, 100]
-            if(result) {
-                resolve(result);
-            }else {
-                reject(new Error(' Data Request Error'))
-            }
-        }, 2000);
-    })
-}
+// const cekNilai = (callback) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const result = callback([90, 80, 85, 100]); // apabila data yang masuk bukan array akan dianggap false. cth input :[90, 74, 85, 100]
+//             if(result) {
+//                 resolve(result);
+//             }else {
+//                 reject(new Error(' Data Request Error'))
+//             }
+//         }, 2000);
+//     })
+// }
 
-cekNilai(nilai).then((res) => {
-    console.log(res);
-}).catch((err) => {
-    console.log(`${err}`);
-})
+// cekNilai(nilai).then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(`${err}`);
+// })
 
 
 
@@ -90,7 +90,7 @@ const makeData = (params, idKey) => {
 
 const result = async() => {
     try {
-        let dtr = await makeData(data, 1020);
+        let dtr = await makeData(data, 1022);
         console.log(dtr);
     } catch (error) {
         console.log(`${error}`);

@@ -14,19 +14,19 @@ const hariKerja = (day) => {
     })
 }
 
-const resultDay = async() => {
-    try {
-        const result = await hariKerja('senin')
-        console.log(result)
-    } catch (error) {
-        console.log(`${error}`);
-    }
-}
-resultDay();
+// const resultDay = async() => {
+//     try {
+//         const result = await hariKerja('minggu')
+//         console.log(result)
+//     } catch (error) {
+//         console.log(`${error}`);
+//     }
+// }
+// resultDay();
 
 
-// hariKerja('senin').then((response) => {
-//     console.log(response);//digunakan untuk menangani promise untuk kasus berhasil
-// }).catch((err) => {
-//     console.log(`${err}`);//metode penanganan promise yang hanya menangani kasus eror/ditolak
-// })
+hariKerja('senin').then((response) => {
+    console.log(response);//digunakan untuk menangani promise untuk kasus berhasil
+}).catch((err) => {
+    console.log(`${err}`);//metode penanganan promise yang hanya menangani kasus eror/ditolak
+})
