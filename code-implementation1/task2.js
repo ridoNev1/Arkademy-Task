@@ -10,4 +10,4 @@ const divSort = (input) => {
     return result;
 }
 
-console.log(divSort(842838102345974));
+console.log(divSort(842838102340914));

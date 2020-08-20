@@ -16,7 +16,7 @@ const cekPal = (text) => {
     return result;
 }
 
-console.log(cekPal('joni'));
+console.log(cekPal('Ini'));
 
 //soal 2
 const reverseText = (input) => {
