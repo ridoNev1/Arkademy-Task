@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="./assets/hamburger-menu.png" alt="hamburger-menu">
+            <h3>History</h3>
+            <span></span>
+        </div>
+        <div class="main-content">
+            <div class="side-menu">
+                <img src="./assets/side icon/fork.png">
+                <img src="./assets/side icon/clipboard.png">
+                <img src="./assets/side icon/add.png">
+            </div>
+            <div class="main-dashboard">
+                <div class="dashboard-content">
+                    <div class="content">
+                        <div class="content-text">
+                            <p>Today's Income</p>
+                            <p>Rp. 1.000.000</p>
+                            <p>+2% yesterday</p>
+                        </div>
+                        <img src="./elips/pink violet.png">
+                    </div>
+                    <div class="content">
+                        <div class="content-text">
+                            <p>Orders</p>
+                            <p>3.270</p>
+                            <p>+5% last week</p>
+                        </div>
+                        <img src="./elips/blue.png">
+                    </div>
+                    <div class="content">
+                        <div class="content-text">
+                            <p>This years Income</p>
+                            <p>Rp. 1.00.000.000</p>
+                            <p>+10% Last years</p>
+                        </div>
+                        <img src="./elips/pink violet.png">
+                    </div>
+                </div>
+                <div class="chart">
+                    <div class="revenue">
+                        <p style="font-weight: bold; font-size: 20px;">Revenue</p>
+                        <select name="chartrevenue" style="padding: 7px 12px; background: #CECECE;
+                        border-radius: 10px;">
+                            <option value="month">Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-img">
+                        <canvas id="myChart" width="400" height="130"></canvas>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="table-revenue">
+                        <p style="font-weight: bold; font-size: 20px;">Recent Order</p>
+                        <select name="chartrevenue" style="padding: 7px 12px; background: #CECECE;
+                        border-radius: 10px;">
+                            <option value="month">Today</option>
+                        </select>
+                    </div>
+                    <table class="main-table">
+                        <tr>
+                            <th>Invoices</th>
+                            <th>Cashier</th>
+                            <th>Date</th>
+                            <th>Order</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>#10928</td>
+                            <td>Cashier 1</td>
+                            <td>06 October 2019</td>
+                            <td>Ice Tea, Salad With peanut sauce</td>
+                            <td>Rp. 120.000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="file.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script>
+        let ctx = document.getElementById('myChart').getContext('2d');
+        let myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+                datasets: [{
+                    tension: 0,
+                    label: 'Income This Month',
+                    data: [0, 20, 10, 30, 20, 40, 10, 50, 40, 30, 40, 20, 50, 30, 40, 30, 20, 40, 30],
+                    backgroundColor: [
+                        'transparent',
+                    ],
+                    borderColor: [
+                        '#00F1FF',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    tension: 0,
+                    label: 'Income Last Month',
+                    data : [10, 30, 0, 40, 20, 40, 10, 30, 20, 50, 10, 30, 10, 40, 10, 30, 50, 20, 30],
+                    backgroundColor : [
+                        'transparent'
+                    ],
+                    borderColor: '#ffb8c6',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        
+        </script>
+</body>
+</html>
